@@ -1,0 +1,125 @@
+.makeInput {
+  width: 224px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 89px 14px 18px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 8px 0px;
+
+  border-radius: 14px;
+
+  background: rgb(247, 247, 251);
+  outline: none;
+  border: none;
+}
+
+.makeDiv {
+  position: relative;
+  width: 224px;
+}
+
+.arrowDown {
+  border: none;
+  background-color: transparent;
+
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.optionWrapper {
+  position: absolute;
+  padding: 14px 18px 14px 8px;
+  display: none;
+  flex-direction: column;
+  width: 224px;
+  max-height: 272px;
+  border: solid;
+  z-index: 1000;
+}
+
+.optionWrapper.open {
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 20, 23, 0.05);
+  border-radius: 14px;
+
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+  background: rgb(255, 255, 255);
+}
+
+.option {
+  color: rgba(18, 20, 23, 0.2);
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+  background-color: white;
+  border: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0px;
+  margin: 8px 0px;
+}
+
+input {
+  cursor: pointer;
+}
+
+.option:hover,
+.option:focus {
+  color: rgb(18, 20, 23);
+}
+
+.scrollWrapper {
+  height: 244px;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-moz-scrollbar-track {
+  background: transparent;
+}
+::-ms-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 130px;
+}
+::-moz-scrollbar-thumb {
+  width: 8px;
+  height: 130px;
+
+  bottom: 128px;
+}
+::-ms-scrollbar-thumb {
+  width: 8px;
+  height: 130px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bf8ce1;
+}
+::-moz-scrollbar-thumb:hover {
+  background: #bf8ce1;
+}
+::-ms-scrollbar-thumb:hover {
+  background: #bf8ce1;
+}
