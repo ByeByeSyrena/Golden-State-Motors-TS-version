@@ -1,0 +1,98 @@
+.optionWrapper {
+  position: absolute;
+  z-index: 1000;
+
+  display: none;
+  flex-direction: column;
+  width: 140px;
+  height: 272px;
+}
+
+.optionWrapper.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 20, 23, 0.05);
+  border-radius: 14px;
+
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+  background: rgb(255, 255, 255);
+}
+
+.backspan {
+  width: 135px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 0px 14px 40px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 8px 0px;
+
+  border-radius: 14px;
+
+  background: rgb(247, 247, 251);
+  outline: none;
+  border: none;
+}
+
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.defaultOption {
+  width: 135px;
+}
+
+.wrapper {
+  position: relative;
+  width: 135px;
+}
+
+.arrowDown {
+  border: none;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.option {
+  border: none;
+  background: transparent;
+  width: 100%;
+  color: rgba(18, 20, 23, 0.2);
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.option:hover,
+.option:focus {
+  color: rgb(18, 20, 23);
+}
+
+.scrollWrapper {
+  width: 110px;
+  height: 240px;
+  overflow-y: auto;
+}
+
+.to {
+  position: absolute;
+  top: 15.5px;
+  left: 10px;
+}

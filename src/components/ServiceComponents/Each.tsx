@@ -1,10 +1,10 @@
 import React from "react";
 
-type RenderFunction = (item: string, index: number) => React.ReactNode;
+type RenderFunction = (item: string | number, index: number) => React.ReactNode;
 
 type Props = {
   render: RenderFunction;
-  of: string[];
+  of: string[] | number[];
 };
 
 export const Each = ({ render, of }: Props) => {

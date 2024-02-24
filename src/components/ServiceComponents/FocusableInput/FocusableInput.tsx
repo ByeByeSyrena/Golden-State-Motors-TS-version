@@ -6,7 +6,7 @@ type Props = {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
   placeholder?: string;
-  type: string;
+  type?: string;
   className?: string;
 };
 
