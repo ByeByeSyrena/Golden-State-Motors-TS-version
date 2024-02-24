@@ -1,24 +1,23 @@
-import { createSelector } from '@reduxjs/toolkit';
+import { createSelector } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-export const selectAllCars = state => state.catalog.items;
+export const selectAllCars = (state: RootState) => state.catalog.items;
 
-export const selectFilterOption = state => state.filter.selectedOption;
+export const selectLoader = (state: RootState) => state.catalog.isLoading;
 
-export const selectLoader = state => state.catalog.isLoading;
+export const selectFilterState = (state: RootState) => state.filter;
 
-export const selectFilterState = state => state.filter;
-
-export const selectCatalogState = state => state.catalog;
+export const selectCatalogState = (state: RootState) => state.catalog;
 
 export const selectFilteredCars = createSelector(
   [selectCatalogState, selectFilterState],
   (catalogState, filterState) => {
     const { items } = catalogState;
     const { make, mileage, rentalPrice } = filterState;
-    const from = mileage[0];
-    const to = mileage[1];
+    const from = typeof mileage === "number" ? mileage : mileage[0];
+    const to = typeof mileage === "number" ? mileage : mileage[1];
 
-    const filteredCars = items.filter(car => {
+    const filteredCars = items.filter((car) => {
       let isMatch = true;
 
       if (make && car.make !== make) {
@@ -33,7 +32,7 @@ export const selectFilteredCars = createSelector(
 
       if (
         rentalPrice &&
-        parseInt(car.rentalPrice.replace(/\$/g, '')) > rentalPrice
+        parseInt(car.rentalPrice.replace(/\$/g, "")) > Number(rentalPrice)
       ) {
         isMatch = false;
       }
@@ -45,9 +44,10 @@ export const selectFilteredCars = createSelector(
   }
 );
 
-export const selectIsLoadingPagedCatalog = state =>
+export const selectIsLoadingPagedCatalog = (state: RootState) =>
   state.pagedCatalog.isLoading;
-export const selectIsLoadingCatalog = state => state.catalog.isLoading;
+export const selectIsLoadingCatalog = (state: RootState) =>
+  state.catalog.isLoading;
 
 export const selectOverallIsLoading = createSelector(
   [selectIsLoadingPagedCatalog, selectIsLoadingCatalog],

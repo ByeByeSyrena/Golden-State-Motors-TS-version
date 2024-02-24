@@ -1,6 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getCars } from "./operations";
 
+import { Item } from "../catalog/catalogSlice";
+
+type pagedCatalogTypes = {
+  items: Item[];
+  page: number;
+  isLoading: boolean;
+  error: null | string;
+};
+
 const pagedCatalogSlice = createSlice({
   name: "pagedCatalog",
   initialState: {
@@ -8,7 +17,7 @@ const pagedCatalogSlice = createSlice({
     page: 1,
     isLoading: false,
     error: null,
-  },
+  } as pagedCatalogTypes,
   reducers: {
     addPage(state) {
       state.page = state.page + 1;
@@ -31,9 +40,9 @@ const pagedCatalogSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(getCars.rejected, (state, { payload }) => {
+      .addCase(getCars.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = payload.message;
+        state.error = action.payload as string | null;
       }),
 });
 

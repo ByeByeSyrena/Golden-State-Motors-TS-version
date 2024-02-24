@@ -1,7 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getAllCars } from "./operations";
 
-const catalogInitialState = {
+export interface Item {
+  id: number;
+  year: number;
+  make: string;
+  model: string;
+  type: string;
+  img: string;
+  description: string;
+  fuelConsumption: string;
+  engineSize: string;
+  accessories: string[];
+  functionalities: string[];
+  rentalPrice: string;
+  rentalCompany: string;
+  address: string;
+  rentalConditions: string;
+  mileage: number;
+}
+
+type initialStateTypes = {
+  items: Item[];
+  isLoading?: boolean;
+  error?: string | null;
+};
+
+const catalogInitialState: initialStateTypes = {
   items: [],
   isLoading: false,
   error: null,
@@ -23,14 +48,14 @@ const catalogSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(getAllCars.fulfilled, (state, { payload }) => {
-        state.items = payload;
+      .addCase(getAllCars.fulfilled, (state, action) => {
+        state.items = action.payload;
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(getAllCars.rejected, (state, { payload }) => {
+      .addCase(getAllCars.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = payload;
+        state.error = action.payload as string | null;
       }),
 });
 
