@@ -1,7 +1,10 @@
-export const selectItems = (state) => state.pagedCatalog.items;
+import { RootState } from "../store";
 
-export const selectPage = (state) => state.pagedCatalog.page;
+export const selectItems = (state: RootState) => state.pagedCatalog.items;
 
-export const selectPagedCatalogState = (state) => state.pagedCatalog;
+export const selectPage = (state: RootState) => state.pagedCatalog.page;
 
-export const selectIsLoading = (state) => state.pagedCatalog.isLoading;
+export const selectPagedCatalogState = (state: RootState) => state.pagedCatalog;
+
+export const selectIsLoading = (state: RootState) =>
+  state.pagedCatalog.isLoading;
