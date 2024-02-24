@@ -95,7 +95,7 @@ export const MakeDropdown = ({ onSelectCar }: Props) => {
                   className={css.option}
                   onClick={handleOptionClick}
                 >
-                  {car}
+                  {car as string}
                 </button>
               )}
             />
@@ -108,7 +108,7 @@ export const MakeDropdown = ({ onSelectCar }: Props) => {
                   className={css.option}
                   onClick={handleOptionClick}
                 >
-                  {car}
+                  {car as string}
                 </button>
               )}
             />

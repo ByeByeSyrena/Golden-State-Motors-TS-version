@@ -80,11 +80,11 @@ export const PriceDropdown = ({ onSelectPrice }: Props) => {
             render={(price, index) => (
               <button
                 type="button"
-                key={price}
+                key={price as string}
                 className={css.option}
                 onClick={handleOptionClick}
               >
-                {price}
+                {price as number}
               </button>
             )}
           />

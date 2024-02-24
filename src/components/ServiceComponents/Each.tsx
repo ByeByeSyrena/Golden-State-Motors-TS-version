@@ -1,14 +1,16 @@
 import React from "react";
+import { Item } from "../../redux/catalog/catalogSlice";
 
-type RenderFunction = (item: string | number, index: number) => React.ReactNode;
+type RenderFunction = (
+  item: string | number | Item,
+  index: number
+) => React.ReactNode;
 
 type Props = {
   render: RenderFunction;
-  of: string[] | number[];
+  of: (string | number | Item)[];
 };
 
 export const Each = ({ render, of }: Props) => {
-  return (
-    <>{Array.isArray(of) && of.map((item, index) => render(item, index))}</>
-  );
+  return <>{of.map((item, index) => render(item, index))}</>;
 };
