@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type filterStateTypes = {
   make: string;
-  mileage: string | number;
-  rentalPrice: string | number[];
+  mileage: string | number[];
+  rentalPrice: string | number;
 };
 
 const filterInitialState: filterStateTypes = {

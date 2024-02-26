@@ -15,7 +15,7 @@ import {
 } from "reduxjs-toolkit-persist";
 import storage from "reduxjs-toolkit-persist/lib/storage";
 import { favoritesReducer } from "./favorites/favoritesSlice";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 const persistConfig = {
   key: "favorites",
@@ -43,5 +43,5 @@ export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof rootReducer>;
 
-export const useAppDispatch: () => typeof store.dispatch = useDispatch;
+export type AppDispatch = typeof store.dispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

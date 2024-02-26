@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
-// import { Filter } from '../../components/Filter/Filter/Filter';
-// import { LoadMoreButton } from '../../components/LoadMoreButton/LoadMoreButton';
-// import { Modal } from '../../components/Modal/Modal';
+import { Filter } from "../../components/Filter/Filter/Filter";
+// import { LoadMoreButton } from "../../components/LoadMoreButton/LoadMoreButton";
+// import { Modal } from "../../components/Modal/Modal";
 import { selectItems, selectPage } from "../../redux/pagedCatalog/selectors";
 import { getCars } from "../../redux/pagedCatalog/operations";
 import css from "./HomePage.module.css";
 import { addPage, clearState } from "../../redux/pagedCatalog/catalogSlice";
 import {
+  selectAllCars,
   selectFilteredCars,
   selectOverallIsLoading,
 } from "../../redux/catalog/selectors";
 import { getAllCars } from "../../redux/catalog/operations";
-// import { Loader } from 'components/Loader/Loader';
-// import NotFound from 'components/NotFound/NotFound';
+// import { Loader } from "components/Loader/Loader";
+// import NotFound from "components/NotFound/NotFound";
 import { Each } from "../../components/ServiceComponents/Each";
 import { Show } from "../../components/ServiceComponents/Show";
 import { InventoryItem } from "../../components/InventoryItem/InventoryItem";
 import { Item } from "../../redux/catalog/catalogSlice";
+import { AppDispatch } from "../../redux/store";
 
-const HomePage = () => {
-  const dispatch = useDispatch();
+const HomePage: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [item, setItem] = useState<Item | string>("");
 
@@ -29,7 +32,7 @@ const HomePage = () => {
   const cars = useSelector(selectItems);
   const page = useSelector(selectPage);
   const filteredCars = useSelector(selectFilteredCars);
-  const isLoading = useSelector(selectOverallIsLoading);
+  // const isLoading = useSelector(selectOverallIsLoading);
 
   const openModal = (itemIndex: number) => {
     const selectedItem = cars[itemIndex];
@@ -40,7 +43,7 @@ const HomePage = () => {
 
   // const closeModal = () => {
   //   setIsOpen(false);
-  //   document.body.classList.remove('body-scroll-lock');
+  //   document.body.classList.remove("body-scroll-lock");
   // };
 
   const arrayToRender = shouldRenderArray1 ? cars : filteredCars;
@@ -56,9 +59,9 @@ const HomePage = () => {
     dispatch(getCars({ page }));
   }, [dispatch, page]);
 
-  const handleLoadMore = () => {
-    dispatch(addPage());
-  };
+  // const handleLoadMore = () => {
+  //   dispatch(addPage());
+  // };
 
   const handleFilter = () => {
     dispatch(getAllCars());
@@ -74,7 +77,7 @@ const HomePage = () => {
   return (
     <>
       <section className={css.container}>
-        {/* <Filter onClick={handleFilter} onClearClick={handleClearFilter} /> */}
+        <Filter onClick={handleFilter} onClearClick={handleClearFilter} />
         <Show>
           {/* <Show.When isTrue={isLoading}>
             <Loader />
@@ -86,23 +89,21 @@ const HomePage = () => {
 
           <ul className={css.layout}>
             <Show.When isTrue={arrayToRender.length > 0}>
+              {/* {arrayToRender && ( */}
               <Each
                 of={arrayToRender}
                 render={(item, index) => {
-                  if (typeof item === "object" && item !== null) {
-                    return (
-                      <InventoryItem
-                        car={item as Item}
-                        index={index}
-                        openModal={openModal}
-                        key={(item as Item).id}
-                      />
-                    );
-                  } else {
-                    return null;
-                  }
+                  return (
+                    <InventoryItem
+                      car={item as Item}
+                      index={index}
+                      openModal={openModal}
+                      key={(item as Item).id}
+                    />
+                  );
                 }}
               />
+              {/* )} */}
             </Show.When>
           </ul>
         </Show>

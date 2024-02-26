@@ -1,15 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./redux/store";
+import App from "./components/App";
+import "./index.css";
+import "normalize.css";
+
+const container = document.getElementById("root");
+const root = createRoot(container as HTMLElement);
+
 root.render(
-    <App />
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter basename="Test-template">
+        <App />
+      </BrowserRouter>
+    </PersistGate>
+  </Provider>
 );
-
-
-reportWebVitals();

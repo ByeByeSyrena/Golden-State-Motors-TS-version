@@ -9,13 +9,9 @@ type ShowWhenProps = {
   children: ReactNode;
 };
 
-type ShowElseProps = {
-  children: ReactNode;
-};
-
-const Show: React.FC<ShowProps> & {
+export const Show: React.FC<ShowProps> & {
   When: React.FC<ShowWhenProps>;
-  Else: React.FC<ShowElseProps>;
+  Else: React.FC<ShowProps>;
 } = (props) => {
   const [showComponent, setShowComponent] = useState<ReactNode | null>(null);
 
@@ -24,12 +20,10 @@ const Show: React.FC<ShowProps> & {
     let otherwise: ReactNode | null = null;
 
     Children.forEach(props.children, (child) => {
-      if (React.isValidElement(child)) {
-        if (child.type === Show.When && child.props.isTrue === true) {
-          when = child;
-        } else if (child.type === Show.Else) {
-          otherwise = child;
-        }
+      if (React.isValidElement(child) && child.props.isTrue === true) {
+        when = child;
+      } else if (!when && React.isValidElement(child)) {
+        otherwise = child;
       }
     });
 
@@ -39,12 +33,10 @@ const Show: React.FC<ShowProps> & {
   return <>{showComponent}</>;
 };
 
-const ShowWhen: React.FC<ShowWhenProps> = ({ isTrue, children }) =>
+export const ShowWhen: React.FC<ShowWhenProps> = ({ isTrue, children }) =>
   isTrue ? <>{children}</> : null;
 
-const ShowElse: React.FC<ShowElseProps> = ({ children }) => <>{children}</>;
+export const ShowElse: React.FC<ShowProps> = ({ children }) => <>{children}</>;
 
 Show.When = ShowWhen;
 Show.Else = ShowElse;
-
-export { Show };
