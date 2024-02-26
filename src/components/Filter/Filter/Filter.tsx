@@ -60,24 +60,32 @@ export const Filter = ({ onClick, onClearClick }: Props) => {
 
     dispatch(clearState());
 
-    const leftInputElement = document.getElementById("leftInput");
+    const leftInputElement = document.getElementById(
+      "leftInput"
+    ) as HTMLInputElement;
     if (leftInputElement) {
-      leftInputElement?.setAttribute("value", "");
+      leftInputElement.value = "";
     }
 
-    const rightInputElement = document.getElementById("rightInput");
+    const rightInputElement = document.getElementById(
+      "rightInput"
+    ) as HTMLInputElement;
     if (rightInputElement) {
-      rightInputElement?.setAttribute("value", "");
+      rightInputElement.value = "";
     }
 
-    const makeInputElement = document.getElementById("makeInput");
+    const makeInputElement = document.getElementById(
+      "makeInput"
+    ) as HTMLInputElement;
     if (makeInputElement) {
-      makeInputElement?.setAttribute("value", "");
+      makeInputElement.value = "";
     }
 
-    const priceInputElement = document.getElementById("priceInput");
+    const priceInputElement = document.getElementById(
+      "priceInput"
+    ) as HTMLInputElement;
     if (priceInputElement) {
-      priceInputElement?.setAttribute("value", "");
+      priceInputElement.value = "";
     }
 
     onClearClick();
