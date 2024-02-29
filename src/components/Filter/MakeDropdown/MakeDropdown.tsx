@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import data from "../../../data/makes.json";
 import css from "./MakeDropdown.module.css";
 import { v4 as uuidv4 } from "uuid";
-// import { FocusableInput } from "../../ServiceComponents/FocusableInput/FocusableInput";
-// import { FocusableInputRef } from "../../ServiceComponents/FocusableInput/FocusableInput";
+import { FocusableInput } from "../../ServiceComponents/FocusableInput/FocusableInput";
+import { FocusableInputRef } from "../../ServiceComponents/FocusableInput/FocusableInput";
 import { Each } from "../../ServiceComponents/Each";
 
 type Props = {
@@ -17,7 +17,7 @@ export const MakeDropdown = ({ onSelectCar }: Props) => {
 
   const make = document.getElementById("makeInput") as HTMLInputElement;
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<FocusableInputRef>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,7 +68,7 @@ export const MakeDropdown = ({ onSelectCar }: Props) => {
   return (
     <div className={css.wrapper}>
       <div className={css.makeDiv}>
-        <input
+        <FocusableInput
           id="makeInput"
           ref={inputRef}
           onChange={handleChange}
