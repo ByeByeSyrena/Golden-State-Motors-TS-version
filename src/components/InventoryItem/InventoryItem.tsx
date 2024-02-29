@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import css from "./InventoryItem.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorites } from "../../redux/favorites/favoritesSlice";
-// import { ReactComponent as Heart } from "../../images/heart.svg";
+import { ReactComponent as Heart } from "../../images/heart.svg";
 import { selectFavorites } from "../../redux/favorites/selectors";
 import { deleteFavorites } from "../../redux/favorites/favoritesSlice";
 
@@ -58,8 +58,7 @@ export const InventoryItem = ({ car, index, openModal }: Props) => {
           onClick={handleToggleFavorite}
           className={css.starButton}
         >
-          Click
-          {/* <Heart className={` ${isSelected ? css.starred : css.star}`} /> */}
+          <Heart className={` ${isSelected ? css.starred : css.star}`} />
         </button>
         {car.img ? (
           <img

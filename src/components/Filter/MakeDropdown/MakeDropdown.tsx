@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import React, { InputHTMLAttributes, useEffect, useRef, useState } from "react";
 import data from "../../../data/makes.json";
 import css from "./MakeDropdown.module.css";
 import { v4 as uuidv4 } from "uuid";
-import { FocusableInput } from "../../ServiceComponents/FocusableInput/FocusableInput";
-import { FocusableInputRef } from "../../ServiceComponents/FocusableInput/FocusableInput";
+// import { FocusableInput } from "../../ServiceComponents/FocusableInput/FocusableInput";
+// import { FocusableInputRef } from "../../ServiceComponents/FocusableInput/FocusableInput";
 import { Each } from "../../ServiceComponents/Each";
 
 type Props = {
@@ -15,9 +15,9 @@ export const MakeDropdown = ({ onSelectCar }: Props) => {
   const [search, setSearch] = useState<string>("");
   const [filteredDropdown, setFilteredDropdown] = useState<string[]>([]);
 
-  const make = document.getElementById("makeInput");
+  const make = document.getElementById("makeInput") as HTMLInputElement;
 
-  const inputRef = useRef<FocusableInputRef>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +39,7 @@ export const MakeDropdown = ({ onSelectCar }: Props) => {
     setIsOpen(!isOpen);
   };
 
-  const handleClickOutside: EventListener = (event) => {
+  const handleClickOutside = (event: MouseEvent) => {
     if (
       dropdownRef.current &&
       !dropdownRef.current.contains(event.target as Node)
@@ -55,17 +55,20 @@ export const MakeDropdown = ({ onSelectCar }: Props) => {
     };
   }, []);
 
-  const handleOptionClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const selectedCar: string = e.currentTarget.textContent || "";
-    onSelectCar(selectedCar);
-    make?.setAttribute("value", selectedCar);
-    setSearch("");
+  const handleOptionClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    const target = e.target as HTMLButtonElement;
+    const selectedCar = target.textContent;
+    if (selectedCar) {
+      onSelectCar(selectedCar);
+      make.value = target.textContent || "";
+      setSearch("");
+    }
   };
 
   return (
     <div className={css.wrapper}>
       <div className={css.makeDiv}>
-        <FocusableInput
+        <input
           id="makeInput"
           ref={inputRef}
           onChange={handleChange}

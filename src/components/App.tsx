@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-// import NotFound from "../NotFound/NotFound";
+import NotFound from "./NotFound/NotFound";
 import SharedLayout from "./SharedLayout/SharedLayout";
 
 // const WelcomePage = lazy(() => import("../../pages/WelcomePage/WelcomePage"));
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <Route path="home" element={<HomePage />} />
         {/* <Route path="welcome" element={<WelcomePage />} />
         <Route path="favorites" element={<FavoritePage />} /> */}
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

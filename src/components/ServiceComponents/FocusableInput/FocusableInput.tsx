@@ -2,6 +2,7 @@ import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import type { ForwardedRef } from "react";
 
 type Props = {
+  value?: string | number;
   id?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;

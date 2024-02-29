@@ -1,0 +1,54 @@
+.buttonLoadMore {
+  position: relative;
+  bottom: 0;
+  width: 300px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background-color: #bf8ce1;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.5;
+
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 500;
+  min-width: 180px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.buttonLoadMore:hover,
+.buttonLoadMore:focus {
+  background-color: rgb(52, 112, 255);
+  opacity: 1;
+}
+
+.buttonLoadMore:disabled {
+  background-color: gray;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border-width: 0;
+}

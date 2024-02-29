@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./Filter.module.css";
 
 import { MakeDropdown } from "../MakeDropdown/MakeDropdown";
@@ -63,30 +63,23 @@ export const Filter = ({ onClick, onClearClick }: Props) => {
     const leftInputElement = document.getElementById(
       "leftInput"
     ) as HTMLInputElement;
-    if (leftInputElement) {
-      leftInputElement.value = "";
-    }
+
+    leftInputElement.value = "";
 
     const rightInputElement = document.getElementById(
       "rightInput"
     ) as HTMLInputElement;
-    if (rightInputElement) {
-      rightInputElement.value = "";
-    }
+    rightInputElement.value = "";
 
     const makeInputElement = document.getElementById(
       "makeInput"
     ) as HTMLInputElement;
-    if (makeInputElement) {
-      makeInputElement.value = "";
-    }
+    makeInputElement.value = "";
 
     const priceInputElement = document.getElementById(
       "priceInput"
     ) as HTMLInputElement;
-    if (priceInputElement) {
-      priceInputElement.value = "";
-    }
+    priceInputElement.value = "";
 
     onClearClick();
   };

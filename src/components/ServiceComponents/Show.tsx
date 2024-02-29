@@ -5,7 +5,7 @@ type ShowProps = {
 };
 
 type ShowWhenProps = {
-  isTrue: boolean;
+  isTrue: boolean | undefined;
   children: ReactNode;
 };
 

@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { Filter } from "../../components/Filter/Filter/Filter";
-// import { LoadMoreButton } from "../../components/LoadMoreButton/LoadMoreButton";
+import { LoadMoreButton } from "../../components/LoadMoreButton/LoadMoreButton";
 // import { Modal } from "../../components/Modal/Modal";
 import { selectItems, selectPage } from "../../redux/pagedCatalog/selectors";
 import { getCars } from "../../redux/pagedCatalog/operations";
 import css from "./HomePage.module.css";
 import { addPage, clearState } from "../../redux/pagedCatalog/catalogSlice";
 import {
-  selectAllCars,
   selectFilteredCars,
   selectOverallIsLoading,
 } from "../../redux/catalog/selectors";
 import { getAllCars } from "../../redux/catalog/operations";
-// import { Loader } from "components/Loader/Loader";
-// import NotFound from "components/NotFound/NotFound";
+import { Loader } from "../../components/Loader/Loader";
+import NotFound from "../../components/NotFound/NotFound";
 import { Each } from "../../components/ServiceComponents/Each";
 import { Show } from "../../components/ServiceComponents/Show";
 import { InventoryItem } from "../../components/InventoryItem/InventoryItem";
@@ -24,20 +23,21 @@ import { AppDispatch } from "../../redux/store";
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [item, setItem] = useState<Item | string>("");
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [item, setItem] = useState<Item | string>("");
 
   const [shouldRenderArray1, setArray1] = useState<boolean>(true);
 
   const cars = useSelector(selectItems);
   const page = useSelector(selectPage);
   const filteredCars = useSelector(selectFilteredCars);
-  // const isLoading = useSelector(selectOverallIsLoading);
+  const isLoading = useSelector(selectOverallIsLoading);
 
   const openModal = (itemIndex: number) => {
     const selectedItem = cars[itemIndex];
-    setItem(selectedItem);
-    setIsOpen(true);
+    console.log(selectedItem);
+    // setItem(selectedItem);
+    // setIsOpen(true);
     document.body.classList.add("body-scroll-lock");
   };
 
@@ -59,9 +59,9 @@ const HomePage: React.FC = () => {
     dispatch(getCars({ page }));
   }, [dispatch, page]);
 
-  // const handleLoadMore = () => {
-  //   dispatch(addPage());
-  // };
+  const handleLoadMore = () => {
+    dispatch(addPage());
+  };
 
   const handleFilter = () => {
     dispatch(getAllCars());
@@ -79,17 +79,18 @@ const HomePage: React.FC = () => {
       <section className={css.container}>
         <Filter onClick={handleFilter} onClearClick={handleClearFilter} />
         <Show>
-          {/* <Show.When isTrue={isLoading}>
+          <Show.When isTrue={isLoading}>
             <Loader />
           </Show.When>
 
           <Show.When isTrue={!isLoading && arrayToRender.length === 0}>
-            <NotFound className={css.noResults} />
-          </Show.When> */}
+            <div className={css.noResults}>
+              <NotFound />
+            </div>
+          </Show.When>
 
           <ul className={css.layout}>
             <Show.When isTrue={arrayToRender.length > 0}>
-              {/* {arrayToRender && ( */}
               <Each
                 of={arrayToRender}
                 render={(item, index) => {
@@ -103,11 +104,10 @@ const HomePage: React.FC = () => {
                   );
                 }}
               />
-              {/* )} */}
             </Show.When>
           </ul>
         </Show>
-        {/* <Show>
+        <Show>
           <Show.When
             isTrue={
               !isLoading &&
@@ -118,7 +118,7 @@ const HomePage: React.FC = () => {
             <LoadMoreButton text="Load more" onClick={handleLoadMore} />
           </Show.When>
         </Show>
-        <Show>
+        {/* <Show>
           <Show.When isTrue={isOpen}>
             <Modal onClose={closeModal} car={item} />
           </Show.When>
