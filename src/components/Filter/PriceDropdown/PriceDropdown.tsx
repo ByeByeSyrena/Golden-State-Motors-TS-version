@@ -15,7 +15,7 @@ export const PriceDropdown = ({ onSelectPrice }: Props) => {
   const refPriceInput = useRef<FocusableInputRef>(null);
   const refDropdownInput = useRef<HTMLDivElement>(null);
 
-  const price = document.getElementById("priceInput");
+  const price = document.getElementById("priceInput") as HTMLInputElement;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onSelectPrice(Number(e.target.value));
@@ -44,11 +44,11 @@ export const PriceDropdown = ({ onSelectPrice }: Props) => {
     };
   }, []);
 
-  const handleOptionClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const selectedPrice = e.currentTarget.textContent || "";
-    const adjustToNumber: number = Number(selectedPrice);
-    onSelectPrice(adjustToNumber);
-    price?.setAttribute("value", selectedPrice);
+  const handleOptionClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    const target = e.target as HTMLButtonElement;
+    const selectedPrice = Number(target.textContent);
+    onSelectPrice(selectedPrice);
+    price.value = target.textContent || "";
   };
 
   return (
