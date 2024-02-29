@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import { Header } from "../Header/Header";
-// import { Loader } from '../Loader/Loader';
+import { Loader } from "../Loader/Loader";
 import { Footer } from "../Footer/Footer";
 
 const SharedLayout = () => {
@@ -12,7 +12,7 @@ const SharedLayout = () => {
       <Suspense
         fallback={
           <div>
-            <p>Loading...</p>
+            <Loader />
           </div>
         }
       >
