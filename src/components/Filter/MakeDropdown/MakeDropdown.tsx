@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import data from "../../../data/makes.json";
 import css from "./MakeDropdown.module.css";
 import { v4 as uuidv4 } from "uuid";
