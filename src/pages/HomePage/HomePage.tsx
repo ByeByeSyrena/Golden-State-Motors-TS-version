@@ -88,8 +88,10 @@ const HomePage: React.FC = () => {
               <NotFound />
             </div>
           </Show.When>
+        </Show>
 
-          <ul className={css.layout}>
+        <ul className={css.layout}>
+          <Show>
             <Show.When isTrue={arrayToRender.length > 0}>
               <Each
                 of={arrayToRender}
@@ -105,8 +107,8 @@ const HomePage: React.FC = () => {
                 }}
               />
             </Show.When>
-          </ul>
-        </Show>
+          </Show>
+        </ul>
         <Show>
           <Show.When
             isTrue={
