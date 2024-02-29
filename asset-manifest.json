@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Golden-State-Motors-TS-version/static/css/main.0e3c3aee.css",
-    "main.js": "/Golden-State-Motors-TS-version/static/js/main.2fa74e49.js",
+    "main.js": "/Golden-State-Motors-TS-version/static/js/main.345959bd.js",
     "static/css/360.58ab64b0.chunk.css": "/Golden-State-Motors-TS-version/static/css/360.58ab64b0.chunk.css",
     "static/js/360.7a7c88b9.chunk.js": "/Golden-State-Motors-TS-version/static/js/360.7a7c88b9.chunk.js",
     "static/css/559.13397f68.chunk.css": "/Golden-State-Motors-TS-version/static/css/559.13397f68.chunk.css",
@@ -18,7 +18,7 @@
     "static/media/delete-svgrepo-com.svg": "/Golden-State-Motors-TS-version/static/media/delete-svgrepo-com.46e4ca1db5dabb0720a45f46d7575d5a.svg",
     "static/media/cross.svg": "/Golden-State-Motors-TS-version/static/media/cross.753f5c2cf9cfff4cbb676fb73a3c5bb7.svg",
     "main.0e3c3aee.css.map": "/Golden-State-Motors-TS-version/static/css/main.0e3c3aee.css.map",
-    "main.2fa74e49.js.map": "/Golden-State-Motors-TS-version/static/js/main.2fa74e49.js.map",
+    "main.345959bd.js.map": "/Golden-State-Motors-TS-version/static/js/main.345959bd.js.map",
     "360.58ab64b0.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/360.58ab64b0.chunk.css.map",
     "360.7a7c88b9.chunk.js.map": "/Golden-State-Motors-TS-version/static/js/360.7a7c88b9.chunk.js.map",
     "559.13397f68.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/559.13397f68.chunk.css.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.0e3c3aee.css",
-    "static/js/main.2fa74e49.js"
+    "static/js/main.345959bd.js"
   ]
 }
