@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Filter } from "../../components/Filter/Filter/Filter";
 import { LoadMoreButton } from "../../components/LoadMoreButton/LoadMoreButton";
-// import { Modal } from "../../components/Modal/Modal";
+import { Modal } from "../../components/Modal/Modal";
 import { selectItems, selectPage } from "../../redux/pagedCatalog/selectors";
 import { getCars } from "../../redux/pagedCatalog/operations";
 import css from "./HomePage.module.css";
@@ -23,8 +23,8 @@ import { AppDispatch } from "../../redux/store";
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
-  // const [item, setItem] = useState<Item | string>("");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [item, setItem] = useState<Item | string>("");
 
   const [shouldRenderArray1, setArray1] = useState<boolean>(true);
 
@@ -36,15 +36,15 @@ const HomePage: React.FC = () => {
   const openModal = (itemIndex: number) => {
     const selectedItem = cars[itemIndex];
     console.log(selectedItem);
-    // setItem(selectedItem);
-    // setIsOpen(true);
+    setItem(selectedItem);
+    setIsOpen(true);
     document.body.classList.add("body-scroll-lock");
   };
 
-  // const closeModal = () => {
-  //   setIsOpen(false);
-  //   document.body.classList.remove("body-scroll-lock");
-  // };
+  const closeModal = () => {
+    setIsOpen(false);
+    document.body.classList.remove("body-scroll-lock");
+  };
 
   const arrayToRender = shouldRenderArray1 ? cars : filteredCars;
 
@@ -118,11 +118,11 @@ const HomePage: React.FC = () => {
             <LoadMoreButton text="Load more" onClick={handleLoadMore} />
           </Show.When>
         </Show>
-        {/* <Show>
+        <Show>
           <Show.When isTrue={isOpen}>
-            <Modal onClose={closeModal} car={item} />
+            <Modal onClose={closeModal} car={item as Item} />
           </Show.When>
-        </Show> */}
+        </Show>
       </section>
     </>
   );
