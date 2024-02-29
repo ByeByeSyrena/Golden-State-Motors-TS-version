@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# Golden State Motors - TypeScript version
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Golden State Motors! This is a sample project showcasing a car rental
+application.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Golden State Motors is a React-based web application that allows users to browse
+a catalog of cars, view car details, add cars to their favorites, and search for
+specific cars based on filters.
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Check out the live demo:
+[Golden State Motors](https://byebyesyrena.github.io/Golden-State-Motors-TS-version/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Browse a catalog of cars
+- View detailed information about each car
+- Add cars to favorites
+- Search for cars based on filters (make, price, mileage)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+1. React.js: Frontend library for building user interfaces
+2. Redux: State management library for managing application state
+3. TypeScript: Superset of JavaScript that adds static typing and other features
+4. React Router: Library for declarative routing in React applications
+5. Redux Persist: Library for persisting Redux store state to local storage
+6. CSS Modules: CSS scoping and modularization for component-based styling
+7. GitHub Pages: Hosting platform for deploying static websites and web
+   applications
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+   `git clone https://github.com/ByeByeSyrena/Golden-State-Motors-TS-version.git`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Navigate to the project directory:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   `cd Golden-State-Motors-TS-version`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Install dependencies:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   `npm install`
 
-## Learn More
+4. Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   `npm run start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Open your browser and visit http://localhost:3000 to view the application.
+
+## Deployment
+
+The project is deployed using GitHub Pages. The deployment process involves
+building the React application and configuring GitHub Pages to serve the built
+assets from the gh-pages branch.
+
+To deploy the application to GitHub Pages:
+
+1. Make sure you have set up your GitHub repository with the correct settings
+   for GitHub Pages deployment.
+
+2. Run the following command to build the application:
+
+'npm run build'
+
+3. Once the build process is complete, commit and push the changes to your
+   GitHub repository.
+
+4. Run the following command to build the application:
+
+'npm run deploy'
+
+## Contributing
+
+Contributions are welcome! If you find any bugs or have suggestions for
+improvements, please open an issue or submit a pull request.
