@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Golden-State-Motors-TS-version/static/css/main.0e3c3aee.css",
-    "main.js": "/Golden-State-Motors-TS-version/static/js/main.345959bd.js",
-    "static/css/360.58ab64b0.chunk.css": "/Golden-State-Motors-TS-version/static/css/360.58ab64b0.chunk.css",
-    "static/js/360.7a7c88b9.chunk.js": "/Golden-State-Motors-TS-version/static/js/360.7a7c88b9.chunk.js",
-    "static/css/559.13397f68.chunk.css": "/Golden-State-Motors-TS-version/static/css/559.13397f68.chunk.css",
-    "static/js/559.9cc6a345.chunk.js": "/Golden-State-Motors-TS-version/static/js/559.9cc6a345.chunk.js",
-    "static/css/923.82630174.chunk.css": "/Golden-State-Motors-TS-version/static/css/923.82630174.chunk.css",
-    "static/js/923.5dd790bb.chunk.js": "/Golden-State-Motors-TS-version/static/js/923.5dd790bb.chunk.js",
+    "main.css": "/Golden-State-Motors-TS-version/static/css/main.5280da68.css",
+    "main.js": "/Golden-State-Motors-TS-version/static/js/main.15bffbea.js",
+    "static/css/360.6f9b75fa.chunk.css": "/Golden-State-Motors-TS-version/static/css/360.6f9b75fa.chunk.css",
+    "static/js/360.26c50b38.chunk.js": "/Golden-State-Motors-TS-version/static/js/360.26c50b38.chunk.js",
+    "static/css/559.260cce6f.chunk.css": "/Golden-State-Motors-TS-version/static/css/559.260cce6f.chunk.css",
+    "static/js/559.bd172328.chunk.js": "/Golden-State-Motors-TS-version/static/js/559.bd172328.chunk.js",
+    "static/css/923.456ad221.chunk.css": "/Golden-State-Motors-TS-version/static/css/923.456ad221.chunk.css",
+    "static/js/923.19f1d581.chunk.js": "/Golden-State-Motors-TS-version/static/js/923.19f1d581.chunk.js",
     "static/media/Screenshot_4.png": "/Golden-State-Motors-TS-version/static/media/Screenshot_4.a1ff606dce9eaa57ea8c.png",
     "static/media/pexels-neil-kelly-712618.jpg": "/Golden-State-Motors-TS-version/static/media/pexels-neil-kelly-712618.0b48752be1927f8aac29.jpg",
     "static/media/pexels-hamann-la-1131575.jpg": "/Golden-State-Motors-TS-version/static/media/pexels-hamann-la-1131575.e53b471da11da9a6242c.jpg",
@@ -17,17 +17,17 @@
     "static/media/heart.svg": "/Golden-State-Motors-TS-version/static/media/heart.ce043a59452eb8bdc17daade4a1f2ac4.svg",
     "static/media/delete-svgrepo-com.svg": "/Golden-State-Motors-TS-version/static/media/delete-svgrepo-com.46e4ca1db5dabb0720a45f46d7575d5a.svg",
     "static/media/cross.svg": "/Golden-State-Motors-TS-version/static/media/cross.753f5c2cf9cfff4cbb676fb73a3c5bb7.svg",
-    "main.0e3c3aee.css.map": "/Golden-State-Motors-TS-version/static/css/main.0e3c3aee.css.map",
-    "main.345959bd.js.map": "/Golden-State-Motors-TS-version/static/js/main.345959bd.js.map",
-    "360.58ab64b0.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/360.58ab64b0.chunk.css.map",
-    "360.7a7c88b9.chunk.js.map": "/Golden-State-Motors-TS-version/static/js/360.7a7c88b9.chunk.js.map",
-    "559.13397f68.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/559.13397f68.chunk.css.map",
-    "559.9cc6a345.chunk.js.map": "/Golden-State-Motors-TS-version/static/js/559.9cc6a345.chunk.js.map",
-    "923.82630174.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/923.82630174.chunk.css.map",
-    "923.5dd790bb.chunk.js.map": "/Golden-State-Motors-TS-version/static/js/923.5dd790bb.chunk.js.map"
+    "main.5280da68.css.map": "/Golden-State-Motors-TS-version/static/css/main.5280da68.css.map",
+    "main.15bffbea.js.map": "/Golden-State-Motors-TS-version/static/js/main.15bffbea.js.map",
+    "360.6f9b75fa.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/360.6f9b75fa.chunk.css.map",
+    "360.26c50b38.chunk.js.map": "/Golden-State-Motors-TS-version/static/js/360.26c50b38.chunk.js.map",
+    "559.260cce6f.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/559.260cce6f.chunk.css.map",
+    "559.bd172328.chunk.js.map": "/Golden-State-Motors-TS-version/static/js/559.bd172328.chunk.js.map",
+    "923.456ad221.chunk.css.map": "/Golden-State-Motors-TS-version/static/css/923.456ad221.chunk.css.map",
+    "923.19f1d581.chunk.js.map": "/Golden-State-Motors-TS-version/static/js/923.19f1d581.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e3c3aee.css",
-    "static/js/main.345959bd.js"
+    "static/css/main.5280da68.css",
+    "static/js/main.15bffbea.js"
   ]
 }
